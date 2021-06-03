@@ -1,0 +1,28 @@
+### VERY IMPORTANT NOTES
+# docker tensorflow
+
+apt-get update
+
+apt-get install pkg-config zip g++ zlib1g-dev unzip python
+
+### install bazel here
+
+git clone --single-branch --branch r2.3 https://github.com/tensorflow/tensorflow.git
+
+cd tensorflow
+
+./configure  # answer prompts or use defaults
+
+bazel build //tensorflow/tools/pip_package:build_pip_package
+
+./bazel-bin/tensorflow/tools/pip_package/build_pip_package /mnt  # create package
+
+chown $HOST_PERMS /mnt/tensorflow-version-tags.whl
+
+pip uninstall tensorflow  # remove current version
+
+pip install /mnt/tensorflow-version-tags.whl
+
+cd /tmp  # don't import from source directory
+
+python -c "import tensorflow as tf; print(\"Num GPUs Available: \", len(tf.config.experimental.list_physical_devices('GPU')))"

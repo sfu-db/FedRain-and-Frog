@@ -1,0 +1,13 @@
+Frog/Docs/
+Frog/tensorflow*/
+Frog/Experiments/tensorflow*
+*.json
+*.sh
+Frog/federated/
+Frog/*tar.gz
+Frog/*.sh
+**__pycache__**
+.idea/
+
+Frog/Experiments/adhoc/*results*/
+Frog/Experiments/adhoc/.ipynb_checkpoints/

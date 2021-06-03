@@ -1,0 +1,11 @@
+from .count_aggregation_complain import MNISTCountAggregationComplaintProcessor
+from .mnist_join_count import MNISTJoinAggregationProcessor
+from .mnist_join_rows import MNISTJoinRowsProcessor
+from .mnist_join_ambiguity import MNISTJoinAmbiguityProcessor
+from .mnist_groupby_count import MNISTGroupbyCountProcessor
+from .count_point_complaint import MNISTCountPointComplaintProcessor
+from .count_wrong_complaint import MNISTCountWrongComplaintProcessor
+from .count_aggregation_complain_short_eyesight import (
+    MNISTCountAggregationComplaintShortEyeSightProcessor,
+)
+from .mnist_join_count_non_disjoint import MNISTNonDisjointJoinAggregationProcessor
