@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+service Slave {
+
+  rpc Initialize(Data) returns (Empty) {}
+  rpc SetSecure(Data) returns (Empty) {}
+  rpc UpdateDelta (Data) returns (Empty) {}
+  rpc GetThetaX (Data) returns (Data) {}
+  rpc ComputeEncryptedGradient (Data) returns (Data) {}
+  rpc ApplyGradient (Data) returns (Empty) {}
+  rpc SendMasterPubKey (Data) returns (Empty) {}
+  rpc GetSlavePubKey (Data) returns (Data) {}
+  rpc SetOpt (Data) returns (Empty) {}
+  rpc SetWeights (Data) returns (Empty) {}
+  rpc GetWeights (Data) returns (Data) {}  
+  rpc GetThetaXForTest(Data) returns (Data) {}
+  rpc GetThetaXForQuery(Data) returns (Data) {}
+  rpc GetDebugState(Data) returns (Data) {}
+  
+  rpc StartDebug(Data) returns (Empty) {}
+
+  rpc QGradStep1(Data) returns (Data) {}
+  rpc QGradStep2(Data) returns (Empty) {}
+  rpc GetQgrad(Data) returns (Data) {}
+
+  rpc HvpStep1(Data) returns (Data) {}
+  rpc HvpStep2(Data) returns (Data) {}
+  rpc HvpStep3(Data) returns (Data) {}
+  
+
+  rpc CGInit(Data) returns (Empty) {}
+  rpc CGGetR2(Data) returns (Data) {}
+  rpc CGpHvp(Data) returns (Data) {}  
+  rpc UpdateZandR(Data) returns (Empty) {}
+  rpc UpdateP(Data) returns (Empty) {}
+  rpc CGGetRNorm(Data) returns (Data) {}
+  rpc Influence(Data) returns (Data) {}
+
+  rpc EndDebug(Data) returns (Empty) {}
+  
+}
+
+message Empty {}
+
+message Data {
+  bytes data = 1;
+  enum Stage {
+    TRAIN = 0;
+    DEBUG = 1;
+    RETRAIN = 2;
+    TEST = 3;
+    QUERY = 4;
+  }
+  Stage stage = 2;
+}
