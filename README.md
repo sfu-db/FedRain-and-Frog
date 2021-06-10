@@ -42,7 +42,7 @@ container. The computation and encryption time would be printed out.
 
 Run `Experiments/com_time.py` to compute the time cost for communication.
 
-For Figure 3, we duplicate the data points and features in 'Experiments/processors/diabetes/__init__.py'.
+For Figure 3, we duplicate the data points and features (e.g. `x = np.tile(x,(50, 1))`) in `Experiments/processors/diabetes/__init__.py` to get the scalability performance of Frog.
 
 
 #### Reproduce Figure 4
@@ -50,5 +50,5 @@ For Figure 3, we duplicate the data points and features in 'Experiments/processo
 Run `Experiments/adhoc/LinearComb_Diabetes.ipynb` and `Experiments/adhoc/LinearComb_BreastCancer.ipynb` to reproduce the data for Figure 4. The Recall@k plots are summarized in `Experiments/adhoc/LC_Corruption_Plot.ipynb`.
 
 #### Reproduce Figure 5 & Table 5
-Run `http://localhost:6008/notebooks/Frog/Experiments/adhoc/LinearComb_Adults_DisparateImpact.ipynb`.
+Run `Experiments/adhoc/LinearComb_Adults_DisparateImpact.ipynb`.
 
