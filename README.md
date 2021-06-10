@@ -27,3 +27,28 @@ The end to end running time will be printed out once `call_slave.py` finished.
 #### Reproduce Figure 4
 
 Run `RecallK.ipynb` to reproduce the data for Figure 4.
+
+## Reproduce Frog Experiments
+
+
+### Dependencies
+
+Run `cd Frog && pip install -r requirements.txt` to install the python dependencies.
+
+#### Reproduce Table 3 & Figure 3
+
+Goto `Experiments/processors/diabetes`, run `train_debug_master.py` in one docker container and `train_debug_slave.py` in another 
+container. The computation and encryption time would be printed out.
+
+Run `Experiments/com_time.py` to compute the time cost for communication.
+
+For Figure 3, we duplicate the data points and features in 'Experiments/processors/diabetes/__init__.py'.
+
+
+#### Reproduce Figure 4
+
+Run `Experiments/adhoc/LinearComb_Diabetes.ipynb` and `Experiments/adhoc/LinearComb_BreastCancer.ipynb` to reproduce the data for Figure 4. The Recall@k plots are summarized in `Experiments/adhoc/LC_Corruption_Plot.ipynb`.
+
+#### Reproduce Figure 5 & Table 5
+Run `http://localhost:6008/notebooks/Frog/Experiments/adhoc/LinearComb_Adults_DisparateImpact.ipynb`.
+
