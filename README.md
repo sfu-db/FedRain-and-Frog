@@ -1,6 +1,8 @@
 # FedRain-and-Frog
 Code of FedRain and Frog for VLDB 2022
 
+For the paper with secure CG protocol, please take a look at [the technical report](paper%20with%20appendix.pdf)
+
 ## Reproduce FedRain Experiments
 
 ### Dependencies
